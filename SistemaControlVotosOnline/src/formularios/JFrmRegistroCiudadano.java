@@ -8,10 +8,10 @@ import java.text.*;
 import javax.swing.*;
 
 
-public class frmRegistroCiudadano extends javax.swing.JFrame {
+public class JFrmRegistroCiudadano extends javax.swing.JFrame {
 
     Votante votante = new Votante();
-    public frmRegistroCiudadano() {
+    public JFrmRegistroCiudadano() {
         initComponents();
     }
 
@@ -301,21 +301,23 @@ public class frmRegistroCiudadano extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmRegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmRegistroCiudadano().setVisible(true);
+                new JFrmRegistroCiudadano().setVisible(true);
             }
         });
     }

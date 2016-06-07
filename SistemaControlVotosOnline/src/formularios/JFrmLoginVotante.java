@@ -6,13 +6,12 @@ package formularios;
  * @author BuiltApp
  */
 import clases.Votante;
-import java.text.*;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
-public class frmLoginVotante extends javax.swing.JFrame {
+public class JFrmLoginVotante extends javax.swing.JFrame {
 
-   Votante objeto = new Votante();
-    public frmLoginVotante() {
+   Votante votante = new Votante();
+    public JFrmLoginVotante() {
         initComponents();
     }
 
@@ -176,8 +175,38 @@ public class frmLoginVotante extends javax.swing.JFrame {
     }//GEN-LAST:event_jTxtRespuestaActionPerformed
 
     private void jBtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIngresarActionPerformed
-       objeto.setUsuario(this.jTxtUsuario.getText());
-       objeto.setPassword(this.jTxtPassword.getText());
+       
+       if(this.jTxtUsuario.getText().equals(votante.getUsuario()))
+       {
+            if(this.jTxtPassword.getText().equals(votante.getPassword()))
+            {
+                if(this.jTxtDui.getText().equals(votante.getDui()))
+                {
+                    if(this.jCmbPregunta.getSelectedItem().equals(votante.getPregunta()) && this.jTxtRespuesta.getText().equals(votante.getRespuesta()))
+                    {
+                        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema de votaciones online");
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Pregunta o respuesta incorrecta");
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "DUI incorrecto");
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+            }
+       }
+       else
+       {
+           JOptionPane.showMessageDialog(null, "El usuario no existe");
+       }
+       ;
+       
     }//GEN-LAST:event_jBtnIngresarActionPerformed
 
     /**
@@ -197,21 +226,23 @@ public class frmLoginVotante extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrmLoginVotante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmLoginVotante().setVisible(true);
+                new JFrmLoginVotante().setVisible(true);
             }
         });
     }
